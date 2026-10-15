@@ -1,0 +1,101 @@
+name: "📖 User Story"
+description: "Propose a new user story to the product backlog using standard Agile formatting."
+title: "[Brief story title]"
+labels: ["user-story", "backlog"]
+type: User Story
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to ensure the team has enough context to refine and estimate this item.
+  - type: input
+    id: parent-feature
+    attributes:
+      label: "🔗 Parent Feature Link"
+      description: "Provide the Issue # or URL of the parent Feature. (Optional)"
+      placeholder: "#789"
+    validations:
+      required: false
+  - type: textarea
+    id: core-story
+    attributes:
+      label: "📋 The User Story"
+      description: "State the user story using the standard Agile template. This should be a short overview/summary."
+      placeholder: |
+        As a [type of user],
+        I want to [perform some action / have a feature],
+        So that [I can achieve a business value / benefit].
+    validations:
+      required: true
+  - type: textarea
+    id: story-goals-context
+    attributes:
+      label: "💡 Goals & Motivation Context"
+      description: "Provide more details about the specific problem this user story solves? Why is this important? Mention any metrics, customer feedback, or KPIs this impacts."
+      placeholder: | 
+        ## Goals
+        1. Goal 1
+        2. Goal 2
+        3. Goal 3
+
+        ## Motivation & Goal Context
+        Provide any additional context or metrics here
+    validations:
+      required: false
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: "✅ Success Criteria"
+      description: "Define the boundaries of this user story using Given-When-Then format (Behavior Driven Development) if possible."
+      placeholder: |
+        Scenario 1: [Scenario title]
+          Given [initial context]
+          When [event occurs]
+          Then [expected outcome]
+          
+        Scenario 2: [Scenario title]
+          ...
+    validations:
+      required: true
+  - type: dropdown
+    id: persona
+    attributes:
+      label: "👤 Target Persona"
+      description: "Which user archetype benefits most from this story?"
+      options:
+        - "End User / Consumer"
+        - "Administrator"
+        - "Internal Team / Developer (Technical Debt/Spike)"
+        - "Third-Party API Consumer"
+        - "Other (Specify in context)"
+    validations:
+      required: true
+  - type: textarea
+    id: persona-context
+    attributes:
+      label: "Target Persona Additional Context (Optional)"
+      description: "If you selected 'Other', provide additional target audience context here"
+    validations:
+      required: false
+  - type: checkboxes
+    id: definition-of-ready
+    attributes:
+      label: "🏁 Definition of Ready Criteria"
+      description: "This checklist should contain specific information that can be used to define individual tasks. Ensure this story meets basic requirements before being pulled into a Sprint backlog."
+      options:
+        - label: "The story is clear, concise, and correct template format."
+          required: true
+        - label: "Goals are clearly defined and provide sufficient context to understand what we want to accomplish."
+          required: true
+        - label: "Success criteria provides clarity to understand what should happen for known scenarios."
+          required: true
+        - label: "UX/UI designs or wireframes are attached (if applicable)."
+          required: false
+  - type: textarea
+    id: technical-notes
+    attributes:
+      label: "🛠️ Technical Notes / Implementation Hints (Optional)"
+      description: "Any architectural considerations, specific endpoints, or database tables involved."
+      placeholder: "For developers to fill out during refinement..."
+    validations:
+      required: false
