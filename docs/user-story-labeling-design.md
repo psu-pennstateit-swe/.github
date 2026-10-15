@@ -53,8 +53,8 @@ The caller should:
 
 - Subscribe to `issues` events `opened` and `edited`. Also subscribe to `labeled`
   and `unlabeled` to support late opt-in, scope removal, and correction of manual
-  changes to the managed labels. Automation's own label events converge to a
-  no-op. Do not filter solely using the event's possibly stale label list.
+  changes to the managed labels. Duplicate events converge to a no-op. Do not
+  filter solely using the event's possibly stale label list.
 - Grant only `issues: write` to the called job via the repository-scoped
   `GITHUB_TOKEN`; unspecified permissions are disabled. The reusable workflow
   cannot elevate permissions beyond the caller. No org-wide PAT or inherited
@@ -163,8 +163,10 @@ For each reconciliation:
    backoff; a partial failure is safe to retry idempotently.
 5. Re-fetch after writes and recompute from the latest body, scope, and managed
    labels. Repeat until converged, or fail visibly after bounded retries and
-   arrange a fresh reconciliation. Label-generated events and subsequent edits
-   also reconcile again. GitHub issue/label APIs offer no atomic body-and-label
+   arrange an explicit retry through the same issue-level path. Label changes
+   made with `GITHUB_TOKEN` do not trigger new workflow runs, so do not rely on
+   those events for recovery. Human label changes and subsequent edits reconcile
+   again. GitHub issue/label APIs offer no atomic body-and-label
    transaction, so a brief stale label window is possible; this is eventual
    convergence, not a claim of atomicity.
 
