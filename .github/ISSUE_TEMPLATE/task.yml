@@ -1,6 +1,6 @@
 name: "🛠️ Task / Sub-task"
 description: "Define a specific, technical piece of work required to complete a user story."
-title: "Task: [Technical Action Item]"
+title: "[Task Action Item]"
 labels: ["task", "technical"]
 type: Task
 body:
