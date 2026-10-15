@@ -56,7 +56,7 @@ body:
         Scenario 2: [Scenario title]
           ...
     validations:
-      required: true
+      required: false
   - type: dropdown
     id: persona
     attributes:
@@ -86,9 +86,9 @@ body:
         - label: "The story is clear, concise, and correct template format."
           required: true
         - label: "Goals are clearly defined and provide sufficient context to understand what we want to accomplish."
-          required: true
+          required: false
         - label: "Success criteria provides clarity to understand what should happen for known scenarios."
-          required: true
+          required: false
         - label: "UX/UI designs or wireframes are attached (if applicable)."
           required: false
   - type: textarea
