@@ -1,0 +1,57 @@
+name: "🚀 Feature"
+description: Propose or track a distinct product feature or major capability.
+title: "[Feature title]"
+labels: ["feature"]
+type: Feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Define the feature mechanics, user impact, and engineering constraints here.
+  - type: input
+    id: parent_epic
+    attributes:
+      label: Parent Epic Link (Optional)
+      description: Provide the URL or issue number of the overarching Epic this belongs to.
+      placeholder: "e.g., #123"
+    validations:
+      required: false
+  - type: textarea
+    id: feature_summary
+    attributes:
+      label: Feature Summary & User Impact
+      description: Provide a clear, concise overview of this feature. What problem does it solve, who is it for, and how does it improve their experience?
+      placeholder: |
+        - **The Problem:** Users are dropping off because...
+        - **The Solution:** We are building a feature that allows...
+        - **Target Audience:** Premium subscribers / Admins / Internal support...
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Feature Acceptance Criteria (Business Rules)
+      description: Define the overall business rules, guardrails, and system permissions for this capability.
+      placeholder: |
+        - Must support both [X] and [Y] configurations.
+        - Only users with [Role] permissions can access this view/feature.
+        - Must handle [X] volume of concurrent traffic without degrading performance.
+    validations:
+      required: true
+  - type: dropdown
+    id: release_strategy
+    attributes:
+      label: Release Strategy
+      description: How will this feature be exposed to users?
+      options:
+        - "Feature Flag (Gradual rollout / Canary)"
+        - "Hard Launch (All users immediately)"
+        - "Dark Launch (Backend changes only, no UI)"
+        - "Internal Only / Alpha Test"
+    validations:
+      required: true
+  - type: textarea
+    id: technical_notes
+    attributes:
+      label: Technical Considerations & Architecture
+      description: Mention any specific APIs, data models, or architectural patterns to consider.
