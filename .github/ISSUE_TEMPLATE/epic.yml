@@ -1,0 +1,54 @@
+name: "🏛️ Epic"
+description: Track a high-level strategic initiative or major project phase.
+title: "[Epic title]"
+labels: ["epic"]
+type: Epic
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out this template to define the scope and strategic alignment for this Epic.
+  - type: input
+    id: summary
+    attributes:
+      label: Executive Summary
+      description: A 1-2 sentence overview of what this epic achieves and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: business_value
+    attributes:
+      label: Business Value & Success Metrics
+      description: From a high level perspective, what problem does this solve and how will we measure success?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: In-Scope vs. Out-of-Scope
+      description: Clearly list what will be built and what is explicitly excluded from this phase.
+      placeholder: |
+        - In-Scope: ...
+        - Out-of-Scope: ...
+    validations:
+      required: true
+  - type: textarea
+    id: target_release
+    attributes:
+      label: Target Release / Quarter
+      description: Estimate the projected timeline or phases for the Epic
+      placeholder: |
+        - Q1 2027 Phase 1 Complete
+        - Q2 2027 Phase 2 & 3 Complete
+        - Q3 2027 Stakeholder Acceptance Testing & Production Release
+    validations:
+      required: true
+  - type: checkboxes
+    id: cross_team
+    attributes:
+      label: Cross-Team Dependencies
+      options:
+        - label: Requires Design / UX support
+        - label: Requires Backend/Infrastructure support
+        - label: Requires DevOps changes
+        - label: Requires Security review
