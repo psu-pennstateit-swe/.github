@@ -50,5 +50,6 @@ body:
       options:
         - label: Requires Design / UX support
         - label: Requires Backend/Infrastructure support
+        - label: Requires Database support
         - label: Requires DevOps changes
         - label: Requires Security review
