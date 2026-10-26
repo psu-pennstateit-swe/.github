@@ -73,7 +73,7 @@ body:
     id: definition-of-ready
     attributes:
       label: "🏁 Definition of Ready Criteria"
-      description: "This checklist should contain specific information that can be used to define individual tasks. Ensure this story meets basic requirements before being pulled into a Sprint backlog."
+      description: "This checklist ensures the provided story has sufficient information to be able to define individual tasks. Ensure this story meets basic requirements before being pulled into a Sprint backlog."
       options:
         - label: "The story is clear, concise, and correct template format."
           required: true
