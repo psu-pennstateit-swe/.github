@@ -8,14 +8,6 @@ body:
     attributes:
       value: |
         Please fill out the sections below to ensure the team has enough context to refine and estimate this item.
-  - type: input
-    id: parent-feature
-    attributes:
-      label: "🔗 Parent Feature Link"
-      description: "Provide the Issue # or URL of the parent Feature. (Optional)"
-      placeholder: "#789"
-    validations:
-      required: false
   - type: textarea
     id: core-story
     attributes:
