@@ -8,14 +8,6 @@ body:
     attributes:
       value: |
         Define the feature mechanics, user impact, and engineering constraints here.
-  - type: input
-    id: parent_epic
-    attributes:
-      label: Parent Epic Link (Optional)
-      description: Provide the URL or issue number of the overarching Epic this belongs to.
-      placeholder: "e.g., #123"
-    validations:
-      required: false
   - type: textarea
     id: feature_summary
     attributes:
